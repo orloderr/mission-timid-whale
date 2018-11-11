@@ -21,8 +21,13 @@ module MyGame {
 			this.load.image('titlepage', 'assets/titlepage.jpg');
 			this.load.audio('titleMusic', 'assets/title.mp3', true);
 			this.load.image('logo', 'assets/logo.png');
-            this.load.spritesheet('simon', 'assets/simon.png', 58, 96, 5);
-            this.load.image('level1', 'assets/level1.png');
+			
+			this.load.image('garbage', 'assets/garbage_1.png');
+			this.load.image('explode', 'assets/explode_1.png');
+			this.load.spritesheet('whale', 'assets/whale_8.png', 60, 60, 8);
+			this.load.spritesheet('mirror', 'assets/mirror_2.png', 60, 60, 2);
+			this.load.image('level1', 'assets/level1.png');
+			
 			//	+ lots of other required assets here
 
 		}
