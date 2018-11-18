@@ -8,7 +8,10 @@ module MyGame {
 
         create() {
             this.background = this.add.sprite(0, 0, 'level');
-            let loadedObjects = LevelLoader.loadLevel('level1', this.game); // Contains all loaded objects
+
+            let levelData = this.cache.getText('levelData');
+
+            let loadedObjects = LevelLoader.loadLevel(levelData, this.game); // Contains all loaded objects
         }
 
 

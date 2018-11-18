@@ -28,7 +28,7 @@ module MyGame {
             this.load.spritesheet('mirror', 'assets/mirror_2.png', 60, 60, 2);
             this.load.image('level', 'assets/level1.png');
 
-            //	+ lots of other required assets here
+            this.load.text('levelData', 'levels/Level1');
 
         }
 
