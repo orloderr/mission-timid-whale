@@ -7,7 +7,7 @@ module MyGame {
         Right,
     };
 
-	export class Whale extends Phaser.Sprite {
+	export class Whale extends GridSprite {
 
         direction: Direction;
 
@@ -17,7 +17,7 @@ module MyGame {
             
 			this.game.physics.arcade.enableBody(this);
 
-			this.anchor.setTo(0.5, 0);
+			this.anchor.setTo(0, 0);
 
             this.direction = Direction.Up;
             this.animations.add('turnRight', [0, 1, 2], 10, false);

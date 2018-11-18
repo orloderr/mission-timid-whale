@@ -1,6 +1,6 @@
 module MyGame {
 
-	export class Garbage extends Phaser.Sprite {
+	export class Garbage extends GridSprite {
 
 		constructor(game: Phaser.Game, x: number, y: number) {
 
@@ -8,7 +8,7 @@ module MyGame {
 
 			this.game.physics.arcade.enableBody(this);
 			
-			this.anchor.setTo(0.5, 0);
+			this.anchor.setTo(0, 0);
 
 			game.add.existing(this);
 
