@@ -7,4 +7,11 @@ module MyGame {
         public static LEVEL_WIDTH = 10;
         public static LEVEL_HEIGHT = 10;
     }
+
+    export enum Direction {
+        Up,
+        Down,
+        Left,
+        Right,
+    };
 }

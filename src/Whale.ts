@@ -1,42 +1,33 @@
 module MyGame {
 
-    enum Direction {
-        Up,
-        Down,
-        Left,
-        Right,
-    };
-
-	export class Whale extends GridSprite {
+    export class Whale extends GridSprite {
 
         direction: Direction;
 
-		constructor(game: Phaser.Game, x: number, y: number) {
+        constructor(game: Phaser.Game, x: number, y: number) {
 
             super(game, x, y, 'whale', 0);
-            
-			this.game.physics.arcade.enableBody(this);
 
-			this.anchor.setTo(0, 0);
+            this.game.physics.arcade.enableBody(this);
 
             this.direction = Direction.Up;
             this.animations.add('turnRight', [0, 1, 2], 10, false);
             this.animations.add('turnDown', [2, 3, 4], 10, false);
             this.animations.add('turnLeft', [4, 5, 6], 10, false);
             this.animations.add('turnUp', [6, 7, 0], 10, false);
-            
+
             this.inputEnabled = true;
             this.events.onInputDown.add(this.clickListener, this);
 
-			game.add.existing(this);
-
-		}
-
-		update() {
+            game.add.existing(this);
 
         }
-        
-        clickListener () {
+
+        update() {
+
+        }
+
+        clickListener() {
             switch (this.direction) {
                 case Direction.Up:
                     // Turn to right.
@@ -65,6 +56,6 @@ module MyGame {
             }
         }
 
-	}
+    }
 
 }

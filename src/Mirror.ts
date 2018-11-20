@@ -1,23 +1,27 @@
 module MyGame {
 
-	export class Mirror extends GridSprite {
+    export class Mirror extends GridSprite {
 
-		constructor(game: Phaser.Game, x: number, y: number) {
+        direction: Direction;
 
-			super(game, x, y, 'mirror', 0);
+        constructor(game: Phaser.Game, x: number, y: number, d: Direction) {
 
-			this.game.physics.arcade.enableBody(this);
-			
-			this.anchor.setTo(0, 0);
+            super(game, x, y, 'mirror', 0);
 
-			game.add.existing(this);
+            this.game.physics.arcade.enableBody(this);
 
-		}
+            this.direction = d;
+            if (d == Direction.Left) {
+                this.angle = 0;
+            }
+            else {
+                this.angle = 90;
+            }
 
-		update() {
+            game.add.existing(this);
 
-		}
+        }
 
-	}
+    }
 
 }
