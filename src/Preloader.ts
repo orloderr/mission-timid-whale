@@ -28,6 +28,11 @@ module MyGame {
             this.load.spritesheet('mirror', 'assets/mirror_2.png', 60, 60, 2);
             this.load.image('level', 'assets/level1.png');
 
+            this.load.image('laserFull', 'assets/laserFull.png');
+            this.load.image('laserHalf', 'assets/laserHalf.png');
+            this.load.image('laserAngle', 'assets/laserAngle.png');
+
+
             this.load.text('levelData', 'levels/Level1');
 
         }

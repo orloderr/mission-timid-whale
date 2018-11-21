@@ -13,20 +13,21 @@ module MyGame {
 
             for (let i: number = 0; i < Constants.LEVEL_WIDTH; i++) {
                 for (let j: number = 0; j < Constants.LEVEL_HEIGHT; j++) {
-                    switch (levelData.charAt(i * Constants.LEVEL_HEIGHT + j)) {
+                    switch (levelData.charAt(i * (Constants.LEVEL_WIDTH + 2) + j)) { // +2 for \r\n
                         case FileFieldType.Whale:
-                            loadedObjects.push(new Whale(game, i, j));
+                            loadedObjects.push(new Whale(game, j, i));
                             break;
                         case FileFieldType.Garbage:
-                            loadedObjects.push(new Garbage(game, i, j));
+                            loadedObjects.push(new Garbage(game, j, i));
                             break;
                         case FileFieldType.MirrorLeft:
-                            loadedObjects.push(new Mirror(game, i, j, Direction.Left));
+                            loadedObjects.push(new Mirror(game, j, i, Direction.Left));
                             break;
                         case FileFieldType.MirrorRight:
-                            loadedObjects.push(new Mirror(game, i, j, Direction.Right));
+                            loadedObjects.push(new Mirror(game, j, i, Direction.Right));
                             break;
                         default:
+
                             // Ignore empty or unknown fields.
                             break;
                     };
